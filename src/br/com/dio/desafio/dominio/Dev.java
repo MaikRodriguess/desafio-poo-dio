@@ -43,6 +43,9 @@ public class Dev {
     }
 
     public void setNome(String nome) {
+        if(nome == null || nome.isEmpty()){
+            throw new IllegalArgumentException("O nome do desenvolvedor não pode ser nulo ou vazio");
+        }
         this.nome = nome;
     }
 
@@ -74,4 +77,14 @@ public class Dev {
     public int hashCode() {
         return Objects.hash(nome, conteudosInscritos, conteudosConcluidos);
     }
+
+//    public Dev(String nome, Set<Conteudo> conteudosInscritos, Set<Conteudo> conteudosConcluidos) {
+//
+//        if(this.nome == null || this.nome.isEmpty()){
+//            throw new IllegalArgumentException("O nome do desenvolvedor não pode ser nulo ou vazio");
+//        }
+//        this.nome = nome;
+//        this.conteudosInscritos = conteudosInscritos;
+//        this.conteudosConcluidos = conteudosConcluidos;
+//    }
 }
